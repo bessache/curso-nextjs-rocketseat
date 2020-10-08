@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO';
 import { GetServerSideProps } from 'next';
 //import math from '../lib/math';
 import {Title} from '../styles/pages/Home'
@@ -19,8 +20,16 @@ export default function Home({recommendedProducts}:HomeProps) {
 
   return (
     <div>
+        <SEO 
+          title="DevCommerce, your best e-commerce!" 
+          description="Site de loja"
+          image="boost.png"
+          shouldExcludeTitleSuffix
+          shoudIndexPage
+        />
         <section>
           <Title>Products</Title>
+          
           <ul>
             {recommendedProducts.map(recommendedProduct=>{
               return (
